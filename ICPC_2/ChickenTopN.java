@@ -1,3 +1,4 @@
+//ë°±ì¤€ 11582ë²ˆ
 package ICPC_2;
 
 import java.util.Arrays;
@@ -9,17 +10,17 @@ public class ChickenTopN {
 		// TODO Auto-generated method stub
 
 		Scanner sc = new Scanner(System.in);
-		int N = sc.nextInt(); //Ä¡Å²Áý °³¼ö
+		int N = sc.nextInt(); //ì¹˜í‚¨ì§‘ ê°œìˆ˜
 		int [] tastescore = new int[N];
 		for(int i=0; i<N; i++)
-			tastescore[i] = sc.nextInt(); //Ä¡Å²Áý Á¡¼ö
-		int k = sc.nextInt(); //ÇöÀç ´Ü°è ÁøÇàÇÏ°í ÀÖ´Â È¸¿ø¼ö
+			tastescore[i] = sc.nextInt(); //ì¹˜í‚¨ì§‘ ì ìˆ˜
+		int k = sc.nextInt(); //í˜„ìž¬ ë‹¨ê³„ ì§„í–‰í•˜ê³  ìžˆëŠ” íšŒì›ìˆ˜
 		for(int i=2; i<=N/k; i*=2)
 			for(int j=0; j<N/i; j++)
 				Arrays.sort(tastescore, i*j, i*(j+1));
-		/*Ã³À½¿¡´Â i<=N ±îÁö·Î ÇÏ°í for¹® ¾È¿¡ if(N/i==k) break;
-		 * ¸¦ ³Ö¾ú¾ú´Âµ¥ ¼öÁ¤ÇÏ´Ù°¡ ÀÌ°Ô ³ª¿Ô°í if ¹®À» °è»êÇÒ ÇÊ¿ä¾ø´Â ÀÌ°Ô Á¶±ÝÀÌ¶óµµ ´õ ºü¸¦ °Í
-		 * °°¾Æ¼­ ÀÌ°É·Î Çß´Ù. ¹°·Ð ´õ ºü¸£°Ô ÇÏ°í ½Í´Ù¸é Scanner ´ë½Å BufferedReaderÀ» ½á¾ßÇÑ´Ù.
+		/*ì²˜ìŒì—ëŠ” i<=N ê¹Œì§€ë¡œ í•˜ê³  forë¬¸ ì•ˆì— if(N/i==k) break;
+		 * ë¥¼ ë„£ì—ˆì—ˆëŠ”ë° ìˆ˜ì •í•˜ë‹¤ê°€ ì´ê²Œ ë‚˜ì™”ê³  if ë¬¸ì„ ê³„ì‚°í•  í•„ìš”ì—†ëŠ” ì´ê²Œ ì¡°ê¸ˆì´ë¼ë„ ë” ë¹ ë¥¼ ê²ƒ
+		 * ê°™ì•„ì„œ ì´ê±¸ë¡œ í–ˆë‹¤. ë¬¼ë¡  ë” ë¹ ë¥´ê²Œ í•˜ê³  ì‹¶ë‹¤ë©´ Scanner ëŒ€ì‹  BufferedReaderì„ ì¨ì•¼í•œë‹¤.
 		 */
 		for(int i=0; i<N; i++)
 			System.out.print(tastescore[i] + " ");
